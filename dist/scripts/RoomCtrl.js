@@ -1,9 +1,9 @@
 (function() {
-    function RoomCtrl($scope, Room) {
-        //$scope.rooms = Room;
+    function RoomCtrl(Room, $scope) {
+        $scope.rooms = Room.all;
     }
 
     angular
         .module('blocChat')
-        .factory('RoomCtrl', ['$scope','Room', RoomCtrl]);
+        .controller('RoomCtrl', ['Room','$scope', RoomCtrl]);
 })();
