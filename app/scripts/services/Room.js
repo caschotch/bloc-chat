@@ -2,9 +2,14 @@
     function Room($firebaseArray) {
         var ref = firebase.database().ref().child("rooms");
         var rooms = $firebaseArray(ref);
-        
+
         return {
-            all: rooms
+            //array of all rooms
+            all: rooms,
+            // adds new room
+            create: function(room) {
+                rooms.$add({name: room});
+            }
         };
     }
 

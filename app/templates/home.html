@@ -1,36 +1,57 @@
-<section class="jumbotron">
-    <h1>Bloc Chat</h1>
-</section>
 
-<div class="col-md-3">
-    <div>
-        <h3>
-            Chats
-        </h3>
-        <div>
-            <button>Create Room</button>
+<!-- Header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 title-sec">
+            <section class="text-center">
+                Bloc Chat
+
+            </section>
         </div>
     </div>
-
-    <div>
-        <div ng-repeat="room in rooms">
-            {{ room.name }}
-        </div>
-    </div>
-
-
 </div>
 
-<div class="col-md-9">
-    <h3>Room Name</h3>
-    <p>
-        message title
+<hr class="hr-bar">
 
-    </p>
-    <form>
-        <div class="col-md-8">
-            <input type="text" placeholder="What you want to say..." class="form-control">
+<!-- sidebar / messages -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- sidebar -->
+        <div class="col-md-2 sidebar">
+            <div>
+                <h2 class="text-center">
+                    Chats
+                </h2>
+                <div ng-controller="ModalCtrl">
+                    <button type="button" class="btn btn-default" ng-click="open()">Create Room</button>
+                </div>
+            </div>
+            <!-- listing of rooms -->
+            <div class="room-list">
+                <div ng-repeat="room in rooms">
+                    {{ room.name }}
+                </div>
+            </div>
         </div>
-        <button type="button">Send Message</button>
-    </form>
+        <!-- Message area -->
+        <div class="col-md-10">
+            <h3>Room Name</h3>
+            <p>
+                message title
+
+            </p>
+
+            <!-- Enter messages here -->
+            <div class="row message-row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="col-md-8">
+                            <input type="text" placeholder="What you want to say..." class="form-control">
+                        </div>
+                        <button type="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
