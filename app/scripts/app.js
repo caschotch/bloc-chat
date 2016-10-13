@@ -14,9 +14,23 @@
             });
     }
 
+    function BlocChatCookies($cookies, $uibModal){
+        var currentUser = $cookies.get('blocChatCurrentUser');
+		if (!currentUser || currentUser ===''){
+			$uibModal.open({ // same modal from the other modal, will copy the createroommodal items
+				templateUrl: '/templates/usermodal.html',
+				controller: 'UserModalCtrl',
+				size: 'sm',
+				backdrop: 'static'
+			});
+			currentUser = $cookies.get('blocChatCurrentUser');
+		}
+	}
+
 
 
     angular
-        .module('blocChat', ['ui.router','firebase', 'ui.bootstrap'])
-        .config(config);
+        .module('blocChat', ['ui.router','firebase', 'ui.bootstrap', 'ngCookies'])
+        .config(config)
+        .run(['$cookies', '$uibModal', BlocChatCookies]);
 })();
