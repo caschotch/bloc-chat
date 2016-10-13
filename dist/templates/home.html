@@ -14,7 +14,7 @@
 <hr class="hr-bar">
 
 <!-- sidebar / messages -->
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="RoomCtrl">
     <div class="row">
         <!-- sidebar -->
         <div class="col-md-2 sidebar">
@@ -28,19 +28,21 @@
             </div>
             <!-- listing of rooms -->
             <div class="room-list">
-                <div ng-repeat="room in rooms">
+                <!-- need to find out how to link room to current room -->
+                <div ng-repeat="room in rooms" ng-click="activeRoom(room)">
                     {{ room.name }}
                 </div>
             </div>
         </div>
         <!-- Message area -->
-        <div class="col-md-10">
-            <h3>Room Name</h3>
-            <p>
-                message title
-
-            </p>
-
+        <section class="col-md-10 chat-room">
+            <h3>{{ currentRoom.name }}</h3>
+            <ul>
+            <li ng-repeat="message in messages">
+                {{ message.content }}
+            </li>
+        </ul>
+        </section>
             <!-- Enter messages here -->
             <div class="row message-row">
                 <div class="col-md-12">
@@ -52,6 +54,6 @@
                     </form>
                 </div>
             </div>
-        </div>
+
     </div>
 </div>

@@ -53,11 +53,24 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
     margin-top: 20px;
     font-size: 2.1rem;
 }
+/**********Chat room *********/
+.chat-room {
+    min-height: 400px;
+}
+
+
+
+
+/************Send message area     *************/
+.message-row {
+    height: 100%;
+    bottom: 0;
+}
 
 /* Create Room Modal Window */
 .modalstyles {
     border-radius: 5px;
-    background-color: lightpurple;
+    background-color: #f7f7ff;
 }
 
 .modalstyles input {
@@ -75,10 +88,4 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 }
 .cancel-btn:hover {
     background-color: red;
-}
-
-
-.message-row {
-    height: 100%;
-    bottom: 0;
 }
