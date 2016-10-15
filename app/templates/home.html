@@ -1,31 +1,27 @@
 
 <!-- Header -->
 <div class="container-fluid">
-    <div class="row">
+    <div class="row  header">
         <div class="col-md-12 title-sec">
-            <section class="text-center">
-                Bloc Chat
-
+            <section class="text-right">
+                <h3>Bloc Chat</h3>
             </section>
         </div>
     </div>
-</div>
 
-<hr class="hr-bar">
 
-<!-- sidebar / messages -->
-<div class="container-fluid" ng-controller="RoomCtrl">
-    <div class="row">
+    <!-- sidebar / messages -->
+    <div class="row"ng-controller="RoomCtrl">
         <!-- sidebar -->
-        <div class="col-md-2 sidebar">
-            <div>
-                <h2 class="text-center">
+        <div class="sidebar">
+
+                <h3>
                     Chats
-                </h2>
+                </h3>
                 <div ng-controller="ModalCtrl">
                     <button type="button" class="btn btn-default" ng-click="open()">Create Room</button>
                 </div>
-            </div>
+
             <!-- listing of rooms -->
             <div class="room-list">
                 <!-- need to find out how to link room to current room -->
@@ -34,26 +30,34 @@
                 </div>
             </div>
         </div>
-        <!-- Message area -->
-        <section class="col-md-10 chat-room">
-            <h3>{{ currentRoom.name }}</h3>
-            <ul>
-            <li ng-repeat="message in messages">
-                {{ message.content }}
-            </li>
-        </ul>
-        </section>
-            <!-- Enter messages here -->
-            <div class="row message-row">
-                <div class="col-md-12">
-                    <form>
-                        <div class="col-md-8">
-                            <input type="text" placeholder="What you want to say..." class="form-control">
-                        </div>
-                        <button type="button">Send Message</button>
-                    </form>
-                </div>
-            </div>
 
+
+        <!-- Message area -->
+        <div class="chat-room">
+            <div>
+                <h3>{{ currentRoom.name }}</h3>
+            </div>
+            <div>
+                <ul class="message-list">
+                    <li ng-repeat="message in messages">
+                        <h4>{{ message.username }}</h4>
+                        <p>
+                            {{ message.content }}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Enter messages here -->
+            <div class="row message-row align-right">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" size="100" class="form-control" placeholder="What you want to say..." ng-trim="true" ng-model="newMessage">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success" ng-click="send(newMessage)">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 (function() {
-    function RoomCtrl(Room, $scope) {
+    function RoomCtrl(Room, $scope, Message) {
         $scope.rooms = Room.all;
 
 // need to find out how to list all messages
@@ -14,10 +14,17 @@
             $scope.messages = Room.getMessages(room.$id);
         };
 
+        $scope.send = function(newMessage) {
+            Message.send(newMessage.trim(), $scope.currentRoom.$id);
+            $scope.newMessage = null;
+        };
 
     }
 
+
+
+
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room','$scope', RoomCtrl]);
+        .controller('RoomCtrl', ['Room','$scope', 'Message', RoomCtrl]);
 })();

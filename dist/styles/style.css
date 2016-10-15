@@ -1,76 +1,88 @@
 /*
-#c03221
-#f7f7ff
-#f2d0a4
-#545e75
-#3f826d
+#2b2d42
+#8d99ae
+#edf2f4
+#ef233c
+#d90429
 */
 html,
 body {
-    height: 100vh;
+    background-color: #edf2f4;
+    color: #edf2f4;
 }
-body {
-    background-color: #f7f7ff;
-    color: #545e75;
-}
+h3 {
 
-.hr-bar {
-    border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-
-/* Title Bar */
-.title-sec {
-color: #fff;
-font-size: 5em;
-font-weight: bold;
-font-family: Helvetica;
-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-}
-
-.title-sec h1 {
-    margin-right: 20px;
-    font-weight: bold;
+.header {
+    background-color: #2b2d42;
+    height: 60px;
 }
 
 /* Sidebar */
 .sidebar {
-
+    position: fixed;
+    width: 10%;
+    height: 100%;
+    padding-left: 2%;
+    /*****testing**********/
+    background: linear-gradient(to bottom, #2b2d42, #8d99ae);
 }
 
 .sidebar button {
-    border-color: #f7f7ff;
+    border-color:transparent;
     background-color: rgba(63,130,109,.50);
     color: #f7f7ff;
 }
 .sidebar button:hover {
+    border-color: transparent;
     background-color: rgba(63,130,109,.70);
     color: #f7f7ff;
 }
 
-.room-list {
-    margin-top: 20px;
-    font-size: 2.1rem;
+.room-list div{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    padding-left: 15px;
 }
+
 /**********Chat room *********/
 .chat-room {
-    min-height: 400px;
+
+    width: 90%;
+    float: right;
+    color: black;
+    padding-left: 30px;
+}
+.message-list ul{
+}
+.message-list li{
+    list-style-type: none;
+}
+.message-list li p {
+    padding-left: 30px;
 }
 
+/************Send message area*************/
 
-
-
-/************Send message area     *************/
 .message-row {
-    height: 100%;
+    position: fixed;
     bottom: 0;
+    margin-bottom: 20px;
 }
+
+.message-row input{
+ size: 500px;
+}
+
+
+
+
 
 /* Create Room Modal Window */
 .modalstyles {
     border-radius: 5px;
     background-color: #f7f7ff;
+    color: #2b2d42;
 }
 
 .modalstyles input {
